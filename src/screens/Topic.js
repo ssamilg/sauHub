@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { View, Text, Image } from 'react-native';
 import {Button} from 'react-native-paper';
+import {Header} from '../components/common/Header';
 
 export default class Topic extends React.Component {
     render() {

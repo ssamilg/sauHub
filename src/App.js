@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Loading } from './components/common/';
 import Auth from './screens/Auth';
 import deviceStorage from './services/deviceStorage.js';
+import HomeScreen from './screens/Home';
 import CategoryScreen from './screens/Category';
 import ProfileScreen from './screens/Profile';
 import TopicListScreen from './screens/TopicList';

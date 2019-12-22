@@ -17,11 +17,7 @@ export default class CategoryScreen extends React.Component {
         category:[]
       }
   }
-
-  static navigationOptions = {
-    title: 'Home',
-  };
-
+  
   componentDidMount(){
 
     AsyncStorage.getItem('id_token').then((value) => {

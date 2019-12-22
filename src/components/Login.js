@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Text, View, Image, KeyboardAvoidingView } from 'react-native';
-import { Input, TextLink, Loading, Button } from './common';
+import { Input, TextLink, Loading } from './common';
+import {Button} from 'react-native-paper';
 import axios from 'axios';
 import deviceStorage from '../services/deviceStorage';
 
@@ -82,7 +83,7 @@ class Login extends Component {
             </Text>
 
             {!loading ?
-              <Button onPress={this.loginUser}>
+              <Button onPress={this.loginUser} mode="contained" style={{alignSelf:'center', width:'70%'}}>
                 Login
               </Button>
               :

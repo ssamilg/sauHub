@@ -1,10 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { View, Text, Image, KeyboardAvoidingView } from 'react-native';
-import { Input, TextLink, Button, Loading } from './common';
+import { Input, TextLink, Loading } from './common';
 import axios from 'axios';
 import deviceStorage from '../services/deviceStorage';
-import { BottomNavigation } from 'react-native-paper';
-
+import {Button} from 'react-native-paper';
 
 class Registration extends Component {
   constructor(props){
@@ -105,7 +104,7 @@ class Registration extends Component {
             </Text>
 
             {!loading ?
-                <Button onPress={this.registerUser}>
+                <Button onPress={this.registerUser} mode="contained">
                 Register
                 </Button>
                 :
