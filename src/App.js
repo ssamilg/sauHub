@@ -2,19 +2,23 @@ import React, { Component } from 'react';
 import { Loading } from './components/common/';
 import Auth from './screens/Auth';
 import deviceStorage from './services/deviceStorage.js';
-import HomeScreen from './screens/Home';
+import CategoryScreen from './screens/Category';
 import ProfileScreen from './screens/Profile';
-
+import TopicListScreen from './screens/TopicList';
+import TopicScreen from './screens/Topic';
 import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 
+
 const RootStack = createDrawerNavigator(
   {
-    Home: HomeScreen,
     Profile: ProfileScreen,
+    TopicList: TopicListScreen,
+    Topic: TopicScreen,
+    Category:CategoryScreen
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Category',
     defaultNavigationOptions: true,
   }
 );

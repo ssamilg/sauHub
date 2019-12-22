@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Appbar } from 'react-native-paper';
+import { Appbar, Title } from 'react-native-paper';
 
 // const Header = ({}) => {
 //     const {Header} = styles;
@@ -19,7 +19,7 @@ import { Appbar } from 'react-native-paper';
 //     )
 // }
 
-const Header = ({ onPress }) => {
+const Header = ({ onPress, title,subtitle }) => {
     return(
         <Appbar.Header>
         <Appbar.Action
@@ -27,8 +27,8 @@ const Header = ({ onPress }) => {
             onPress={onPress}
         />
         <Appbar.Content
-            title="Title"
-            subtitle="Subtitle"
+            title= {title}
+            subtitle={subtitle}
         />
         <Appbar.Action icon="magnify" onPress={this._handleSearch} />
         <Appbar.Action icon="dots-vertical" onPress={this._handleMore} />

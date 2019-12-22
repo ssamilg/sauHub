@@ -4,12 +4,11 @@ import {Header} from '../components/common/Header';
 import {CardList} from "../components/common/CardList";
 import { Loading } from "../components/common/Loading";
 import axios from 'axios';
-import deviceStorage from '../services/deviceStorage';
 import { AsyncStorage } from 'react-native';
 
 
 
-export default class HomeScreen extends React.Component {
+export default class CategoryScreen extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -48,7 +47,7 @@ export default class HomeScreen extends React.Component {
     });
   }
   render() {
-    const { container, flatList } = styles;
+    const { container } = styles;
     const { loading, category } = this.state;
     if (loading){
       return(
@@ -63,7 +62,17 @@ export default class HomeScreen extends React.Component {
           <SafeAreaView>
             <FlatList contentContainerStyle={{ paddingBottom: 200}}
               data={category}
-              renderItem={({ item }) => <CardList title={ item.name} description={item.categoryDescription} />}
+              renderItem={({ item }) => 
+              <CardList 
+                image= {'https://picsum.photos/700'}
+                title={ item.name} 
+                description={item.categoryDescription} 
+                onPress={() => this.props.navigation.navigate('TopicList',
+                {
+                    id: item.id,
+                    name: item.name
+                })} 
+              />}
               keyExtractor={item => item.id.toString()}
             />
           </SafeAreaView>

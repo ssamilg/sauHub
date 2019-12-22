@@ -10,7 +10,7 @@ export default class ProfileScreen extends React.Component {
           <Button
             onPress={() => this.props.navigation.navigate('Home')}
           >
-            Go to Home
+            {JSON.stringify(this.props.navigation.getParam('id', 'NO-ID'))}
           </Button>
         </View>
       );
