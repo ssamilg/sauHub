@@ -36,7 +36,7 @@ export default class HomeScreen extends React.Component {
                     Go to Details
                   </Button>
                   <Button onPress={this.props.screenProps.deleteJWT}>
-                    Log Out
+                    ÇIIIKK NOLURSUN GİT YA
                   </Button>
                 </View>
             </View>
