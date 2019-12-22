@@ -6,19 +6,25 @@ import CategoryScreen from './screens/Category';
 import ProfileScreen from './screens/Profile';
 import TopicListScreen from './screens/TopicList';
 import TopicScreen from './screens/Topic';
+import NewPostScreen from './screens/NewPost';
+import PostReplyScreen from './screens/PostReply';
+
 import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 
 
 const RootStack = createDrawerNavigator(
   {
+    Home: HomeScreen,
     Profile: ProfileScreen,
+    Category: CategoryScreen,
+    NewPost: NewPostScreen,
+    PostReply: PostReplyScreen,
     TopicList: TopicListScreen,
     Topic: TopicScreen,
-    Category:CategoryScreen
   },
   {
-    initialRouteName: 'Category',
+    initialRouteName: 'Home',
     defaultNavigationOptions: true,
   }
 );
