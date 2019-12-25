@@ -1,81 +1,88 @@
-import * as React from 'react';
-import { View, Image, Text } from 'react-native';
-import {Header} from '../components/common/Header';
-import {Button, Banner } from 'react-native-paper';
+import * as React from "react";
+import { View, Image, Text } from "react-native";
+import { Header } from "../components/common/Header";
+import { Button, Banner } from "react-native-paper";
 
 export default class HomeScreen extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-        loading: true,
-        error: '',
-        visible: true,
-        category:[]
-      }
+      loading: true,
+      error: "",
+      visible: true,
+      category: []
+    };
   }
 
   static navigationOptions = {
-    title: 'Home',
+    title: "Home"
   };
 
   render() {
     return (
-      <View style={{flex:1}}>
+      <View style={{ flex: 1 }}>
         <Header onPress={this.props.navigation.openDrawer} />
-          <Banner
-            visible={this.state.visible}
-            actions={[
-              {
-                label: 'HOŞBULDUM',
-                onPress: () => this.setState({ visible: false }),
-              },
-            ]}
-            icon={({ size }) =>
-              <Image
-                source={require('../../assets/logo.png')}
-                style={{
-                  width: size,
-                  height: size,
-                }}
-              />
+        <Banner
+          visible={this.state.visible}
+          actions={[
+            {
+              label: "HOŞBULDUM",
+              onPress: () => this.setState({ visible: false })
             }
+          ]}
+          icon={({ size }) => (
+            <Image
+              source={require("../../assets/logo.png")}
+              style={{
+                width: size,
+                height: size
+              }}
+            />
+          )}
+        >
+          SAÜ HUB'A HOŞGELDİNİZ !
+        </Banner>
+        <View style={{ flex: 1, flexDirection: "column" }}>
+          <View
+            style={{ flex: 4, alignItems: "center", justifyContent: "center" }}
           >
-            SAÜ HUB'A HOŞGELDİNİZ !
-          </Banner>
-          <View style={{ flex: 1,flexDirection:'column'}}>
-              <View style={{flex:4, alignItems:'center',justifyContent:'center'}}>
-                  <Image
-                    style={{width: 200, height: 200}}
-                    source={require('../../assets/logo.png')}
-                  />
-              </View>
-              <View style={{flex:4, alignItems:'center',justifyContent:'flex-start'}}>
-                <Button
-                  mode="contained"
-                  onPress={() => this.props.navigation.navigate('Category')}
-                  style={{borderRadius:5, marginBottom:10,width:'70%' }}
-                >
-                  Kategorileri Görüntüle
-                </Button>
-                <Button
-                  mode="contained"
-                  onPress={() => this.props.navigation.navigate('NewPost')}
-                  style={{borderRadius:5, marginBottom:10,width:'70%' }}
-                >
-                  Yeni Konu Aç
-                </Button>
-                </View>
-                <View style={{ alignItems:'center', justifyContent:'flex-end' }}>
-                <Button 
-                  onPress={this.props.screenProps.deleteJWT}
-                  style={{marginBottom:20,width:'70%' }}
-                >
-                  Çıkış Yap
-                </Button>
-              </View>
+            <Image
+              style={{ width: 200, height: 200 }}
+              source={require("../../assets/logo.png")}
+            />
+          </View>
+          <View
+            style={{
+              flex: 4,
+              alignItems: "center",
+              justifyContent: "flex-start"
+            }}
+          >
+            <Button
+              mode="contained"
+              onPress={() => this.props.navigation.navigate("Category")}
+              style={{ borderRadius: 5, marginBottom: 10, width: "70%" }}
+            >
+              Kategorileri Görüntüle
+            </Button>
+            <Button
+              mode="contained"
+              onPress={() => this.props.navigation.navigate("NewPost")}
+              style={{ borderRadius: 5, marginBottom: 10, width: "70%" }}
+            >
+              Yeni Konu Aç
+            </Button>
+          </View>
+          <View style={{ alignItems: "center", justifyContent: "flex-end" }}>
+            <Button
+              onPress={this.props.screenProps.deleteJWT}
+              style={{ marginBottom: 20, width: "70%" }}
+            >
+              Çıkış Yap
+            </Button>
           </View>
         </View>
+      </View>
     );
   }
 }
-

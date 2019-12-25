@@ -1,6 +1,13 @@
-import React from 'react';
-import { View } from 'react-native';
-import { Appbar, Title } from 'react-native-paper';
+import React from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  ImageBackground,
+  Image
+} from "react-native";
+import { Appbar, Title } from "react-native-paper";
 
 // const Header = ({}) => {
 //     const {Header} = styles;
@@ -10,7 +17,7 @@ import { Appbar, Title } from 'react-native-paper';
 //                 <Left>
 //                     <Icon
 //                         name='ios-menu'
-//                         onPress={() => 
+//                         onPress={() =>
 //                             this.props.navigation.navigate('DrawerOpen')}
 //                     />
 //                 </Left>
@@ -19,21 +26,15 @@ import { Appbar, Title } from 'react-native-paper';
 //     )
 // }
 
-const Header = ({ onPress, title,subtitle }) => {
-    return(
-        <Appbar.Header>
-        <Appbar.Action
-            icon = "menu"
-            onPress={onPress}
-        />
-        <Appbar.Content
-            title= {title}
-            subtitle={subtitle}
-        />
-        <Appbar.Action icon="magnify" onPress={this._handleSearch} />
-        <Appbar.Action icon="dots-vertical" onPress={this._handleMore} />
-        </Appbar.Header>
-    );
+const Header = ({ onPress, title, subtitle }) => {
+  return (
+    <Appbar.Header>
+      <Appbar.Action icon="menu" onPress={onPress} />
+      <Appbar.Content title={title} subtitle={subtitle} />
+      <Appbar.Action icon="magnify" onPress={this._handleSearch} />
+      <Appbar.Action icon="dots-vertical" onPress={this._handleMore} />
+    </Appbar.Header>
+  );
 };
 
-export {Header};
+export { Header };

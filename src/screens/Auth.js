@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { View } from 'react-native';
-import { Login, Registration } from '../components';
+import React, { Component } from "react";
+import { View } from "react-native";
+import { Login, Registration } from "../components";
 
 export default class Auth extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       showLogin: false
@@ -18,32 +18,25 @@ export default class Auth extends Component {
     });
   }
 
-
   whichForm() {
-    if(!this.state.showLogin){
-      return(
-        <Registration newJWT={this.props.newJWT} authSwitch={this.authSwitch}/>
+    if (!this.state.showLogin) {
+      return (
+        <Registration newJWT={this.props.newJWT} authSwitch={this.authSwitch} />
       );
     } else {
-      return(
-        <Login newJWT={this.props.newJWT} authSwitch={this.authSwitch}/>
-      );
+      return <Login newJWT={this.props.newJWT} authSwitch={this.authSwitch} />;
     }
   }
 
   render() {
-    return(
-      <View style={styles.container}>
-         {this.whichForm()}
-      </View>
-    );
+    return <View style={styles.container}>{this.whichForm()}</View>;
   }
 }
 
 const styles = {
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems:'center'
+    justifyContent: "center",
+    alignItems: "center"
   }
 };

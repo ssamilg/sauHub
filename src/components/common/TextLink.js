@@ -1,14 +1,12 @@
-import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
 
 const TextLink = ({ onPress, children }) => {
   const { button, text } = styles;
   return (
-    <View style={{flexDirection: 'row'}}>
+    <View style={{ flexDirection: "row" }}>
       <TouchableOpacity onPress={onPress} style={button}>
-        <Text style={text}>
-          {children}
-        </Text>
+        <Text style={text}>{children}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -16,11 +14,11 @@ const TextLink = ({ onPress, children }) => {
 
 const styles = {
   text: {
-    alignSelf: 'center',
-    color: '#0066FF',
+    alignSelf: "center",
+    color: "#0066FF",
     fontSize: 18,
-    fontWeight: '700',
-    textDecorationLine: 'underline',
+    fontWeight: "700",
+    textDecorationLine: "underline",
     paddingTop: 10,
     paddingBottom: 10
   },
